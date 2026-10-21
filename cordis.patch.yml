@@ -1,0 +1,4 @@
+# dsh-quote-annotate-pro：插入插件行（跟随 bundle 安装到任意 profile）
+- insert:
+    - id: quote-annotate-pro
+      name: dsh-quote-annotate-pro

@@ -1,0 +1,54 @@
+{
+  "name": "dsh-quote-annotate-pro",
+  "version": "0.3.6",
+  "description": "划词批注与引用锚点：划词 → 批注（自动编号）→ 引用；引用块在输入框和已发送消息里始终可见（最多 3 行、位置行隐藏），点一下跳回原文并高亮；模型按「Annotation N：」逐条回应，回复里的标签可悬浮看原文与评语。纯客户端，锚点存本地 localStorage。",
+  "keywords": ["dsh", "dsh-plugin", "deepseek-harness", "quote", "annotate", "selection", "reference", "anchor"],
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": ["lib", "tools", "cordis.patch.yml", "README.md", "SUMMARY.md", "CHANGELOG.md", "LICENSE"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhao-guang-ai/dsh-quote-annotate-pro.git"
+  },
+  "homepage": "https://github.com/zhao-guang-ai/dsh-quote-annotate-pro#readme",
+  "bugs": {
+    "url": "https://github.com/zhao-guang-ai/dsh-quote-annotate-pro/issues"
+  },
+  "scripts": {
+    "check": "node tools/check-manifest.mjs",
+    "test": "node tools/test-client.mjs",
+    "diag": "node tools/diag-sink.mjs"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": []
+    }
+  }
+}
